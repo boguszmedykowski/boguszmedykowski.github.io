@@ -6,9 +6,15 @@ body {
 
         header {
             text-align: center;
-            padding: 20px;
+            padding: 0px;
+            margin: 0px;
             background-color: #f0f0f0;
         }
+        header pre {
+        margin: 0;
+        padding: 0;
+        }
+
 
         section {
             max-width: 800px;
@@ -20,6 +26,7 @@ body {
         }
 
         p {
+            text-align: justify;
             color: #555;
         }
 
@@ -32,4 +39,11 @@ body {
 
         a {
             color:#333
+        }
+        img {
+            border: 2px solid #3498db;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            padding: 5px;
+            display: block;
+            margin: 10px auto;
         }
