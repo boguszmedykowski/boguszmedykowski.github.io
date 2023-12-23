@@ -10,12 +10,16 @@ body {
             margin: 0px;
             background-color: #f0f0f0;
         }
+
+        @media screen and (max-width: 600px) {
         header pre {
-        margin: 0;
-        padding: 0;p {
-            text-align: justify;
+            display: none; /* Ukrywa ASCII art na małych ekranach */
         }
-        
+    
+        body {
+            font-size: 14px; /* Mniejszy rozmiar tekstu dla lepszej czytelności */
+        }
+
         }
 
 
