@@ -47,8 +47,6 @@ body {
     }
 }
 
-
-
 @keyframes moveFog {
     0% { transform: translateX(0); }
     100% { transform: translateX(100%); }
@@ -58,13 +56,43 @@ body {
 
 .container {
     display: flex;
-    justify-content: center; /* Wyśrodkowanie poziome */
-    align-items: center; /* Wyśrodkowanie pionowe */
+    flex-direction: column; /* Elementy ułożone pionowo */
+    justify-content: flex-start; /* Elementy rozpoczną się od górnej krawędzi */
+    align-items: center; /* Wyśrodkowanie poziome dla dzieci */
     width: 60%;
-    height: 60%;
-    border-radius: 48px;
+    height: auto; /* Wysokość dostosowuje się do zawartości */
+    margin: 20px auto; /* Margines zewnątrz dla wyśrodkowania */
+    padding: 20px; /* Wewnętrzny odstęp od krawędzi */
     border-radius: 48px;
     background: rgba(217, 217, 217, 0.50);
     backdrop-filter: blur(3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Dodanie cienia dla lepszego efektu */
+}
+
+.container h2 {
+    margin-top: 0; /* Usunięcie domyślnego marginesu u góry */
+    color: #333; /* Ciemniejszy kolor tekstu dla lepszej czytelności */
+}
+
+.container ul {
+    list-style-type: none; /* Usunięcie domyślnych znaczników listy */
+    padding: 0; /* Usunięcie domyślnego paddingu */
+    text-align: left; /* Wyrównanie tekstu do lewej */
+}
+
+.container a {
+    color: #0066cc; /* Kolor linków */
+    text-decoration: none; /* Usunięcie podkreślenia */
+}
+
+.container a:hover {
+    text-decoration: underline; /* Podkreślenie przy najechaniu */
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Zajmuje 90% szerokości ekranu */
+    }
 }
 
