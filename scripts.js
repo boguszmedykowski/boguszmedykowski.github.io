@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
             size++;
             element.style.width = size + 'px';
             element.style.height = size + 'px';
-            if (size >= 100) clearInterval(grow); // Zatrzymaj rośnięcie
         }, 100);
 
         // Reakcja na najechanie kursorem
@@ -47,5 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Tworzenie nowego elementu co jakiś czas
-    setInterval(createRandomElement, 2000); // Co 2 sekundy
+    setInterval(createRandomElement, 6000); // Co 6 sekund
 });
+
