@@ -11,7 +11,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-image: url('../images/background1.png');
+    background-image: url('../img/background1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -88,9 +88,7 @@ body {
 }
 
 .tab button.active {
-    background-color: rgba(98, 118, 114, 0.585); /* Jasne, półprzezroczyste tło */
-    color: white; /* Biały kolor tekstu */
-    font-weight: bold; /* Pogrubienie tekstu */
+    background-color: rgba(255, 255, 255, 0.5); /* Jasne, półprzezroczyste tło */
 }
 
 
