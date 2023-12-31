@@ -38,6 +38,13 @@ body {
     animation: moveFog 60s linear infinite;
 }
 
+/* Dla urządzeń mobilnych o szerokości ekranu mniejszej niż 768px */
+@media (max-width: 360px) {
+    .fog-layer {
+        background: url('../images/Fog-mobile.png') repeat-x;
+    }
+}
+
 
 @keyframes moveFog {
     0% { transform: translateX(0); }
