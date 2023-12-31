@@ -144,3 +144,9 @@ img {
     margin: 10px; /* Ustawia margines 10px z każdej strony dla każdego obrazu */
     opacity: 0.7;
 }
+
+.element {
+  position: absolute;
+  background-color: black;
+  border-radius: 50%;
+}
