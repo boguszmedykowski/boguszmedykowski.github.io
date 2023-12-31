@@ -26,6 +26,7 @@ body {
     background: url('../img/Fog.png') repeat-x;
     background-size: cover;
     animation: moveFog 45s linear infinite;
+    z-index: 5;
 }
 
 .fog-layer:first-child {
@@ -64,6 +65,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 48px;
     padding: 20px;
+    z-index: 10;
 }
 
 @media (max-width: 768px) {
@@ -151,5 +153,6 @@ img {
     border-radius: 50%;
     opacity: 0.7; /* Lekka przezroczystość */
     filter: blur(2px); /* Efekt rozmazania */
+    z-index: 1;
   }
   

@@ -49,3 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(createRandomElement, 6000); // Co 6 sekund
 });
 
+// JavaScript do wyłączenia pointer-events na fog-layer
+const fogLayer = document.querySelector('.fog-layer');
+fogLayer.style.pointerEvents = 'none';
