@@ -72,7 +72,10 @@ body {
 }
 
 .tab button {
-    background-color: #f1f1f1;
+    background: rgba(217, 217, 217, 0.50);
+    margin: 10px;
+    border-radius: 20px;
+    background-color: transparent;
     color: #333;
     border: none;
     padding: 10px 20px;
@@ -85,8 +88,11 @@ body {
 }
 
 .tab button.active {
-    background-color: #ccc;
+    background-color: rgba(98, 118, 114, 0.585); /* Jasne, półprzezroczyste tło */
+    color: white; /* Biały kolor tekstu */
+    font-weight: bold; /* Pogrubienie tekstu */
 }
+
 
 .tabcontent {
     display: none;
