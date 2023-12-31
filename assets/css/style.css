@@ -1,90 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Dodano, aby ukryć obszary poza granicami body */
+    background-image: url('../images/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-header {
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    background-color: #f0f0f0;
+.fog-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Szerokość pojedynczej warstwy */
+    height: 100%;
+    background: url('../images/Fog.png') repeat-x;
+    background-size: cover;
 }
 
-@media screen and (max-width: 600px) {
-    header pre {
-        display: none;
-    }
-
-    body {
-        font-size: 14px;
-    }
+.fog-layer:first-child {
+    animation: moveFog 60s linear infinite;
 }
 
-section {
-    max-width: 800px;
-    margin: 0 auto;
+.fog-layer:nth-child(2) {
+    left: -100%; /* Startujemy z lewej strony ekranu */
+    animation: moveFog 60s linear infinite;
 }
 
-h1, h2 {
-    color: #333;
+
+@keyframes moveFog {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
 }
 
-p {
-    text-align: justify;
-    color: #555;
+
+
+.container {
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie poziome */
+    align-items: center; /* Wyśrodkowanie pionowe */
+    width: 60%;
+    height: 60%;
+    border-radius: 48px;
+    border-radius: 48px;
+    background: rgba(217, 217, 217, 0.50);
+    backdrop-filter: blur(3px);
 }
 
-footer {
-    text-align: center;
-    background-color: #f0f0f0;
-    bottom: 0;
-    width: 100%;
-}
-
-a {
-    color: #333;
-}
-
-img {
-    border: 2px solid #3498db;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    padding: 5px;
-    display: block;
-    margin: 10px auto;
-    max-width: 100%;
-    height: auto;
-}
-
-@media screen and (max-width: 600px) {
-    img {
-        max-width: 50%;
-    }
-}
-
-.button-container {
-    text-align: center; /* Wyśrodkowanie przycisku w poziomie */
-    margin: 20px 0; /* Margines na górze i na dole kontenera przycisku */
-}
-
-button {
-    background-color: #969696;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block; /* Wyśrodkowanie przycisku w poziomie */
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-button:hover {
-    background-color: #6b6b6b;
-}
-
-section p {
-    text-align: justify;
-    text-justify: inter-word;
-}
