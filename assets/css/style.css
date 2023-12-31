@@ -59,7 +59,7 @@ body {
     flex-direction: column; /* Elementy ułożone pionowo */
     justify-content: flex-start; /* Elementy rozpoczną się od górnej krawędzi */
     align-items: center; /* Wyśrodkowanie poziome dla dzieci */
-    width: 60%;
+    width: auto;
     height: auto; /* Wysokość dostosowuje się do zawartości */
     margin: 20px auto; /* Margines zewnątrz dla wyśrodkowania */
     padding: 20px; /* Wewnętrzny odstęp od krawędzi */
@@ -81,18 +81,15 @@ body {
 }
 
 .container a {
-    color: #0066cc; /* Kolor linków */
+    color: #6990b7; /* Kolor linków */
     text-decoration: none; /* Usunięcie podkreślenia */
 }
 
 .container a:hover {
-    text-decoration: underline; /* Podkreślenie przy najechaniu */
+    text-decoration: none; /* Podkreślenie przy najechaniu */
+    text-shadow: #333;
 }
 
 
-@media (max-width: 768px) {
-    .container {
-        width: 90%; /* Zajmuje 90% szerokości ekranu */
-    }
-}
+
 
