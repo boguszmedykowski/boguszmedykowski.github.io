@@ -232,7 +232,7 @@ img {
 
 
   
-.mantra1, .mantra2, .mantra3, .mantra4 {
+.mantra1 {
     color: white;
     font-size: 0;
     position: fixed;
@@ -240,18 +240,39 @@ img {
     top: 50%;
     transform: translate(-50%, -50%);
     white-space: nowrap;
-    animation: growAndFadeOut 6s infinite; /* Ustawienie animacji */
+    animation: growAndFadeOut 10s infinite;
+}
+
+.mantra2 {
+    color: white;
+    font-size: 0;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    animation: growAndFadeOut 10s infinite;
+    animation-delay: 5s; /* Opóźnienie animacji o 3 sekundy */
 }
 
 @keyframes growAndFadeOut {
-    0% {
+    0%, 50% {
         font-size: 0;
         opacity: 1;
+        filter: blur(0px);
     }
-    100% {
+    50% {
         font-size: 30vh;
+        opacity: 0;
+        filter: blur(8px);
+    }
+    75%, 100% {
+        font-size: 0;
         opacity: 0;
     }
 }
+
+
+
 
 
