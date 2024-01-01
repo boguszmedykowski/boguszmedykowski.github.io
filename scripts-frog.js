@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    createFogLayer(100, 'fogg-canvas', 20, true); // Pierwsza warstwa mgły, reaguje na myszkę
-    createFogLayer(50, 'fogg-canvas2', 50, false); // Druga warstwa mgły, nie reaguje na myszkę
+    createFogLayer(100, 'fogg-canvas', 10, true); // Pierwsza warstwa mgły, reaguje na myszkę
+    createFogLayer(50, 'fogg-canvas2', 25, false); // Druga warstwa mgły, nie reaguje na myszkę
 });
 
 function createFogLayer(numberOfParticles, className, particleSize, reactsToMouse) {
@@ -13,7 +13,7 @@ function createFogLayer(numberOfParticles, className, particleSize, reactsToMous
 
         setInterval(() => {
             moveParticleInRandomDirection(element);
-            applyInertia(element);
+            if (reactsToMouse) applyInertia(element);
         }, 100);
     }
 
@@ -44,10 +44,9 @@ function moveParticleInRandomDirection(element) {
 }
 
 function applyInertia(element) {
-    element.style.left = (element.offsetLeft + element.velocity.x) + 'px';
-    element.style.top = (element.offsetTop + element.velocity.y) + 'px';
     element.velocity.x *= 0.95; // Tłumienie prędkości
     element.velocity.y *= 0.95;
+    updateParticlePosition(element);
 }
 
 function pushParticle(particle, e) {
@@ -61,5 +60,22 @@ function pushParticle(particle, e) {
         const angle = Math.atan2(deltaY, deltaX);
         particle.velocity.x += Math.cos(angle) * pushFactor;
         particle.velocity.y += Math.sin(angle) * pushFactor;
+        updateParticlePosition(particle);
     }
+}
+
+function updateParticlePosition(element) {
+    element.style.left = (element.offsetLeft + element.velocity.x) + 'px';
+    element.style.top = (element.offsetTop + element.velocity.y) + 'px';
+    constrainParticleToScreen(element);
+}
+
+function constrainParticleToScreen(element) {
+    const particleRightEdge = element.offsetLeft + element.offsetWidth;
+    const particleBottomEdge = element.offsetTop + element.offsetHeight;
+
+    if (element.offsetLeft < 0) element.style.left = '0px';
+    if (particleRightEdge > window.innerWidth) element.style.left = (window.innerWidth - element.offsetWidth) + 'px';
+    if (element.offsetTop < 0) element.style.top = '0px';
+    if (particleBottomEdge > window.innerHeight) element.style.top = (window.innerHeight - element.offsetHeight) + 'px';
 }
