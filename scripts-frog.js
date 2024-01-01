@@ -1,5 +1,5 @@
 // Sprawdzanie, czy urządzenie jest mobilne
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+if(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     // Wyświetlenie komunikatu, że strona nie jest dostępna na urządzeniach mobilnych
     document.body.innerHTML = '<p>Strona nie jest dostępna na urządzeniach mobilnych.</p>';
 } else {
