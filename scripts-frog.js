@@ -74,8 +74,13 @@ function constrainParticleToScreen(element) {
     const particleRightEdge = element.offsetLeft + element.offsetWidth;
     const particleBottomEdge = element.offsetTop + element.offsetHeight;
 
-    if (element.offsetLeft < 0) element.style.left = '0px';
-    if (particleRightEdge > window.innerWidth) element.style.left = (window.innerWidth - element.offsetWidth) + 'px';
-    if (element.offsetTop < 0) element.style.top = '0px';
-    if (particleBottomEdge > window.innerHeight) element.style.top = (window.innerHeight - element.offsetHeight) + 'px';
+    // Odbijanie cząsteczek od lewej i prawej krawędzi ekranu
+    if (element.offsetLeft < 0 || particleRightEdge > window.innerWidth) {
+        element.velocity.x = -element.velocity.x; // Odwrócenie kierunku poziomego
+    }
+
+    // Odbijanie cząsteczek od górnej i dolnej krawędzi ekranu
+    if (element.offsetTop < 0 || particleBottomEdge > window.innerHeight) {
+        element.velocity.y = -element.velocity.y; // Odwrócenie kierunku pionowego
+    }
 }

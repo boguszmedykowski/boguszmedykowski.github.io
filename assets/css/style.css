@@ -40,6 +40,9 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow-x: hidden; /* Zapobiega poziomemu przewijaniu */
+    overflow-y: hidden; /* Zapobiega poziomemu przewijaniu */
+
 }
 
 .frog {
@@ -51,6 +54,13 @@
     transform: translate(-50%, -50%); /* Przesunięcie do środka */
     z-index: 5;
 }
+
+@media (max-width: 768px) {
+    .frog {
+        height: 50vh; /* Dostosowanie rozmiaru dla widoku mobilnego */
+    }
+}
+
 
 #foggyCanvas {
   position: absolute;
