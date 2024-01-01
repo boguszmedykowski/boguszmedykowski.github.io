@@ -240,7 +240,7 @@ img {
     top: 50%;
     transform: translate(-50%, -50%);
     white-space: nowrap;
-    animation: growAndFadeOut 10s infinite;
+    animation: growAndFadeOut 20s infinite;
 }
 
 .mantra2 {
@@ -251,10 +251,33 @@ img {
     top: 50%;
     transform: translate(-50%, -50%);
     white-space: nowrap;
-    animation: growAndFadeOut 10s infinite;
+    animation: growAndFadeOut 20s infinite;
     animation-delay: 5s; /* Opóźnienie animacji o 3 sekundy */
 }
 
+.mantra3 {
+    color: white;
+    font-size: 0;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    animation: growAndFadeOut 20s infinite;
+    animation-delay: 10s; /* Opóźnienie animacji o 3 sekundy */
+}
+
+.mantra4 {
+    color: white;
+    font-size: 0;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    animation: growAndFadeOut 20s infinite;
+    animation-delay: 15s; /* Opóźnienie animacji o 3 sekundy */
+}
 @keyframes growAndFadeOut {
     0%, 50% {
         font-size: 0;
