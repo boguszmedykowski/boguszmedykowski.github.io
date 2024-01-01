@@ -1,6 +1,4 @@
-document.getElementById('zamknij-komunikat').addEventListener('click', function() {
-    document.getElementById('komunikat-mobilny').style.display = 'none';
-});
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -92,3 +90,7 @@ function constrainParticleToScreen(element) {
 
 
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // Wyświetlenie komunikatu lub przekierowanie
+    document.body.innerHTML = '<p>Strona nie jest dostępna na urządzeniach mobilnych.</p>';
+}
