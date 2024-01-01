@@ -1,3 +1,8 @@
+document.getElementById('zamknij-komunikat').addEventListener('click', function() {
+    document.getElementById('komunikat-mobilny').style.display = 'none';
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     createFogLayer(100, 'fogg-canvas', 10, true); // Pierwsza warstwa mgły, reaguje na myszkę
     createFogLayer(50, 'fogg-canvas2', 25, false); // Druga warstwa mgły, nie reaguje na myszkę
@@ -84,3 +89,6 @@ function constrainParticleToScreen(element) {
         element.velocity.y = -element.velocity.y; // Odwrócenie kierunku pionowego
     }
 }
+
+
+
