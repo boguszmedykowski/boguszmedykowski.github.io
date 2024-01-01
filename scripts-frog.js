@@ -1,7 +1,7 @@
 // Sprawdzanie, czy urządzenie jest mobilne
 if(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     // Wyświetlenie komunikatu, że strona nie jest dostępna na urządzeniach mobilnych
-    document.body.innerHTML = '<p>Strona nie jest dostępna na urządzeniach mobilnych.</p>';
+    document.body.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100vh; color: white; background-color: black; font-size: 20px;"><p>Strona nie jest dostępna na urządzeniach mobilnych.</p></div>';
 } else {
     // Uruchamianie skryptu mgły dla innych urządzeń
     document.addEventListener('DOMContentLoaded', function() {
