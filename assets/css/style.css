@@ -13,7 +13,7 @@
     font-style: normal;
 }
 
-body {
+.main-page {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column; /* Ustawia elementy jeden nad drugim */
@@ -26,6 +26,35 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.zen {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column; /* Ustawia elementy jeden nad drugim */
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.frog {
+    height: 70vh;
+    z-index: 5;
+}
+
+#foggyCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/background1.png"); /* Opcjonalnie, jeśli chcesz tło */
+  overflow: hidden;
 }
 
 
@@ -162,7 +191,7 @@ p {
 
 img {
     margin: 10px; /* Ustawia margines 10px z każdej strony dla każdego obrazu */
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .element {
@@ -178,4 +207,21 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
+ 
+  .fogg-canvas {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9); /* Lekko przezroczysty */
+    border-radius: 50%;
+    filter: blur(16px); /* Efekt rozmazania */
+    z-index: 10;
+    transition: opacity 2s, left 2s, top 2s, width 2s, height 2s; /* Płynne przejścia */
+}
+  .fogg-canvas2 {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1); /* Lekko przezroczysty */
+    border-radius: 50%;
+    filter: blur(16px); /* Efekt rozmazania */
+    z-index: 1;
+    transition: opacity 2s, left 2s, top 2s, width 2s, height 2s; /* Płynne przejścia */
+}
+
