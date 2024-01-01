@@ -45,6 +45,11 @@
 .frog {
     height: 70vh;
     z-index: 5;
+    position: absolute; /* Ustawienie pozycji absolutnej */
+    left: 50%; /* Centrowanie w poziomie */
+    top: 50%; /* Centrowanie w pionie */
+    transform: translate(-50%, -50%); /* Przesunięcie do środka */
+    z-index: 5;
 }
 
 #foggyCanvas {
@@ -224,4 +229,29 @@ img {
     z-index: 1;
     transition: opacity 2s, left 2s, top 2s, width 2s, height 2s; /* Płynne przejścia */
 }
+
+
+  
+.mantra1, .mantra2, .mantra3, .mantra4 {
+    color: white;
+    font-size: 0;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    animation: growAndFadeOut 6s infinite; /* Ustawienie animacji */
+}
+
+@keyframes growAndFadeOut {
+    0% {
+        font-size: 0;
+        opacity: 1;
+    }
+    100% {
+        font-size: 30vh;
+        opacity: 0;
+    }
+}
+
 
