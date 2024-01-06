@@ -13,6 +13,22 @@
     font-style: normal;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column; /* Ustawia elementy jeden nad drugim */
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../img/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
 .main-page {
     font-family: 'Roboto', sans-serif;
     display: flex;
