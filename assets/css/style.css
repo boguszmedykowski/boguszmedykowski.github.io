@@ -33,8 +33,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     cursor: url('../img/frog-cursor.png'), auto;
+}
+a {
+    cursor: url('../img/frog-cursor-hover.png'), pointer;
+}
 
-
+button {
+    cursor: url('../img/frog-cursor-hover.png'), pointer;
 }
 
 .main-page {
@@ -96,7 +101,7 @@ body {
 .shirime {
     font-size: xx-large;
     margin: 5px;
-    cursor: pointer;
+    cursor: url('../img/frog-cursor-hover.png'), pointer;
 
 }
 
@@ -197,6 +202,7 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    cursor: url('../img/frog-cursor-hover.png'), pointer;
 }
 
 .tab button, .button-container button {
@@ -206,7 +212,7 @@ body {
     color: #333;
     border: none;
     padding: 10px 20px;
-    cursor: pointer;
+    cursor: url('../img/frog-cursor-hover.png'), pointer;
     transition: background-color 0.3s;
     opacity: 0.8; /* Lekka przezroczystość */
 }
