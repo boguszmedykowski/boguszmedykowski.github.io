@@ -15,6 +15,9 @@ function openTab(evt, tabName) {
 document.getElementsByClassName("tablinks")[0].click(); // Otwiera pierwszą zakładkę
 
 
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     let elementCount = 0;
     let removedCount = 13;
@@ -23,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const eye = document.getElementById('bigEye');
     const counterElement = document.getElementById('removedCounter');
     const fogLayer = document.querySelector('.fog-layer');
+    const shirimeContainer = document.querySelector('.shirime-container');
+    let isAnimationTriggered = false;
 
     function updateRemovedCounter() {
         counterElement.textContent = `${removedCount}`;
@@ -32,6 +37,18 @@ document.addEventListener('DOMContentLoaded', function () {
             let letterToChange = shirimeLetters[shirimeLetters.length - removedCount];
             letterToChange.style.color = 'white';
             letterToChange.style.textShadow = '0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white';
+        }
+
+        updateShirimeContainer();
+    }
+
+    function updateShirimeContainer() {
+        if (shirimeContainer) {
+            if (removedCount < 2) {
+                shirimeContainer.style.boxShadow = '0 0 10px white';
+            } else {
+                shirimeContainer.style.boxShadow = '0 0 10px black';
+            }
         }
     }
 
@@ -59,23 +76,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 clearInterval(grow);
                 element.remove();
                 elementCount--;
-                if (removedCount > 0) {
-                    removedCount--;
-                }
+                removedCount--;
                 updateRemovedCounter();
             });
         }
     }
 
     shirimeButton.addEventListener('click', function () {
-        if (removedCount < 2) {
-            if (eye.classList.contains('eye-closed')) {
-                eye.classList.remove('eye-closed');
-                eye.classList.add('eye-open');
-            } else {
-                eye.classList.remove('eye-open');
-                eye.classList.add('eye-closed');
-            }
+        if (removedCount < 2 && !isAnimationTriggered) {
+            eye.classList.add('animate-eye');
+            isAnimationTriggered = true;
         }
     });
 
@@ -84,19 +94,13 @@ document.addEventListener('DOMContentLoaded', function () {
         fogLayer.style.pointerEvents = 'none';
     }
 
-    // Aktualizacja licznika na starcie
+    // Inicjalizacja licznika usuniętych elementów na początku
     updateRemovedCounter();
 
     // Tworzenie elementów
     createRandomElement();
     setInterval(createRandomElement, 1000);
 });
-
-
-
-
-
-
 
 
 
