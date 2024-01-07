@@ -85,10 +85,17 @@ document.addEventListener('DOMContentLoaded', function () {
     shirimeButton.addEventListener('click', function () {
         if (removedCount < 2 && !isAnimationTriggered) {
             eye.classList.add('animate-eye');
-            shirimeContainer.style.animation = 'fadeOutBlur 2s forwards'; // Dodanie animacji znikania z blur
+            shirimeContainer.style.animation = 'fadeOutBlur 2s forwards';
             isAnimationTriggered = true;
+
+            // Nasłuchiwacz, który wykrywa zakończenie animacji 'growAndFade'
+            eye.addEventListener('animationend', function () {
+                // Usunięcie elementu 'eye' z DOM po zakończeniu animacji
+                eye.remove();
+            }, { once: true }); // Opcja 'once: true' powoduje, że nasłuchiwacz jest uruchamiany tylko raz
         }
     });
+
 
 
 
