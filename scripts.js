@@ -85,9 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
     shirimeButton.addEventListener('click', function () {
         if (removedCount < 2 && !isAnimationTriggered) {
             eye.classList.add('animate-eye');
+            shirimeContainer.style.animation = 'fadeOutBlur 2s forwards'; // Dodanie animacji znikania z blur
             isAnimationTriggered = true;
         }
     });
+
+
 
     // Wyłączenie pointer-events na fog-layer
     if (fogLayer) {
@@ -99,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tworzenie elementów
     createRandomElement();
-    setInterval(createRandomElement, 1000);
+    setInterval(createRandomElement, 3000);
 });
 
 

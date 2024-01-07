@@ -69,6 +69,8 @@ body {
 }
 
 .shirime-container {
+    position: absolute;
+    top: 10vh;
     background-color: rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 1); /* Cień rzucany na wszystkie strony */
     margin-bottom: 10vh;
@@ -76,14 +78,26 @@ body {
     border-radius: 15px;
 
 }
+@keyframes fadeOutBlur {
+    0% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0;
+        filter: blur(20px); /* Duży blur dla efektu znikania */
+    }
+}
 
 
 
 .shirime {
     font-size: xx-large;
     margin: 5px;
+    cursor: pointer;
 
 }
+
 
 .frog {
     height: 70vh;
