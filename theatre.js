@@ -54,9 +54,12 @@ function drawWave(wave, gradient, increment) {
     waveCtx.fill();
 }
 
+
+
 function animateWaves() {
     requestAnimationFrame(animateWaves);
     waveCtx.clearRect(0, 0, waveCanvas.width, waveCanvas.height);
+
 
     let gradient1 = waveCtx.createLinearGradient(0, 0, 0, waveCanvas.height);
     gradient1.addColorStop(0, 'darkslategray');
@@ -131,15 +134,26 @@ function updateClouds() {
     });
 }
 
-function drawSky() {
-    // Tworzenie gradientu liniowego
-    let gradient = skyCtx.createLinearGradient(0, 0, 0, skyCanvas.height);
-    gradient.addColorStop(0, 'black'); // Czarny na górze
-    gradient.addColorStop(1, 'gray');  // Szary na dole
+function drawMoon() {
+    const moonX = skyCanvas.width / 2;
+    const moonY = skyCanvas.height / 4;
+    const moonRadius = 70;
 
-    // Użycie gradientu do wypełnienia tła
+    skyCtx.beginPath();
+    skyCtx.arc(moonX, moonY, moonRadius, 0, Math.PI * 2, false);
+    skyCtx.fillStyle = 'rgba(255, 255, 220, 0.8)';
+    skyCtx.fill();
+}
+
+function drawSky() {
+    let gradient = skyCtx.createLinearGradient(0, 0, 0, skyCanvas.height);
+    gradient.addColorStop(0, 'black');
+    gradient.addColorStop(1, 'gray');
+
     skyCtx.fillStyle = gradient;
     skyCtx.fillRect(0, 0, skyCanvas.width, skyCanvas.height);
+
+    drawMoon();
 
     clouds.forEach(drawCloud);
     updateClouds();
