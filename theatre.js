@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('click', () => {
+        const leftCurtain = document.querySelector('.left-curtain');
+        const rightCurtain = document.querySelector('.right-curtain');
+
+        leftCurtain.classList.add('slide-left');
+        rightCurtain.classList.add('slide-right');
+    });
+});
+
+
+
 const waveCanvas = document.getElementById('waveCanvas');
 const skyCanvas = document.getElementById('skyCanvas');
 const waveCtx = waveCanvas.getContext('2d');
@@ -178,6 +190,3 @@ window.addEventListener('resize', () => {
 animateWaves();
 animateSky();
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Kod tutaj wykona się, gdy strona zostanie całkowicie załadowana
-});

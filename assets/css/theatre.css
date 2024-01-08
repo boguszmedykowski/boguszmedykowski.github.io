@@ -24,27 +24,39 @@ canvas {
     z-index: 1000; /* Aby upewnić się, że kurtyna jest na wierzchu */
 }
 
+
 .left-curtain {
     left: 0;
-    animation: slideLeft 8s forwards; /* Animacja dla lewej kurtyny */
-    background-image: url('../img/red.jpg'); /* Ścieżka do grafiki lewej kurtyny */
+    /* Usuń linie z animacją */
+    background-image: url('../img/red.jpg');
     background-size: cover;
 }
 
 .right-curtain {
     right: 0;
-    animation: slideRight 8s forwards; /* Animacja dla prawej kurtyny */
-    background-image: url('../img/red.jpg'); /* Ścieżka do grafiki lewej kurtyny */
+    /* Usuń linie z animacją */
+    background-image: url('../img/red.jpg');
     background-size: cover;
 }
 
-/* Animacje */
+/* Nowe klasy dla animacji */
+.slide-left {
+    animation: slideLeft 8s forwards;
+}
+
+.slide-right {
+    animation: slideRight 8s forwards;
+}
+
+/* Definicje animacji (bez zmian) */
 @keyframes slideLeft {
     from { left: 0; }
-    to { left: -50%; } /* Przesunięcie kurtyny na zewnątrz ekranu */
+    to { left: -50%; }
 }
 
 @keyframes slideRight {
     from { right: 0; }
-    to { right: -50%; } /* Przesunięcie kurtyny na zewnątrz ekranu */
+    to { right: -50%; }
 }
+
+
