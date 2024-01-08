@@ -1,0 +1,15 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 50%; /* Ustawiamy każdy canvas na 50% wysokości ekranu */
+    position: absolute;
+    top: 0; /* Pozycjonujemy oba canvasy na górze ekranu */
+}
