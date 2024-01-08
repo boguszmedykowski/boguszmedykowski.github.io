@@ -1,10 +1,10 @@
 // Sprawdzanie, czy urządzenie jest mobilne
-if(/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     // Wyświetlenie komunikatu, że strona nie jest dostępna na urządzeniach mobilnych
     document.body.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100vh; color: white; background-color: black; font-size: 20px;"><p>Strona nie jest dostępna na urządzeniach mobilnych.</p></div>';
 } else {
     // Uruchamianie skryptu mgły dla innych urządzeń
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         createFogLayer(100, 'fogg-canvas', 10, true); // Pierwsza warstwa mgły, reaguje na myszkę
         createFogLayer(50, 'fogg-canvas2', 25, false); // Druga warstwa mgły, nie reaguje na myszkę
     });
@@ -35,7 +35,7 @@ if(/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     function resetParticlePosition(element, size) {
         element.style.left = Math.random() * window.innerWidth + 'px';
         element.style.top = Math.random() * window.innerHeight + 'px';
-        const particleSize = Math.random() * size; 
+        const particleSize = Math.random() * size;
         element.style.width = particleSize + 'vw';
         element.style.height = particleSize + 'vh';
         element.style.opacity = 1;
@@ -89,3 +89,5 @@ if(/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         }
     }
 }
+
+

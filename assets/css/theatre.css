@@ -12,6 +12,7 @@ canvas {
     height: 50%; /* Ustawiamy każdy canvas na 50% wysokości ekranu */
     position: absolute;
     top: 0; /* Pozycjonujemy oba canvasy na górze ekranu */
+    z-index: 0;
 }
 
 /* Styl kurtyn */
