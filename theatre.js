@@ -177,3 +177,7 @@ window.addEventListener('resize', () => {
 
 animateWaves();
 animateSky();
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Kod tutaj wykona się, gdy strona zostanie całkowicie załadowana
+});

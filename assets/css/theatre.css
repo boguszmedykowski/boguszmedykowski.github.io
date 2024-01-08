@@ -13,3 +13,38 @@ canvas {
     position: absolute;
     top: 0; /* Pozycjonujemy oba canvasy na górze ekranu */
 }
+
+/* Styl kurtyn */
+.curtain {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background: #000; /* Czarny kolor kurtyny, możesz zmienić według preferencji */
+    z-index: 1000; /* Aby upewnić się, że kurtyna jest na wierzchu */
+}
+
+.left-curtain {
+    left: 0;
+    animation: slideLeft 8s forwards; /* Animacja dla lewej kurtyny */
+    background-image: url('../img/red.jpg'); /* Ścieżka do grafiki lewej kurtyny */
+    background-size: cover;
+}
+
+.right-curtain {
+    right: 0;
+    animation: slideRight 8s forwards; /* Animacja dla prawej kurtyny */
+    background-image: url('../img/red.jpg'); /* Ścieżka do grafiki lewej kurtyny */
+    background-size: cover;
+}
+
+/* Animacje */
+@keyframes slideLeft {
+    from { left: 0; }
+    to { left: -50%; } /* Przesunięcie kurtyny na zewnątrz ekranu */
+}
+
+@keyframes slideRight {
+    from { right: 0; }
+    to { right: -50%; } /* Przesunięcie kurtyny na zewnątrz ekranu */
+}
