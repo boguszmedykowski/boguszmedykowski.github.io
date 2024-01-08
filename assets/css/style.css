@@ -9,6 +9,10 @@
     outline: inherit;
 }
 
+li {
+    margin-bottom: 5px;
+}
+
 
 @font-face {
     font-family: 'Roboto';
