@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333; /* Ciemne tło */
+    color: #fff; /* Jasny kolor tekstu */
+}
+
+#app {
+    background-color: #222; /* Jeszcze ciemniejsze tło dla aplikacji */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Ciemniejszy cień dla głębi */
+    text-align: center;
+}
+
+#hourlyRate {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #555; /* Ciemniejsza obramówka */
+    background-color: #555; /* Ciemniejsze tło pola */
+    color: #fff; /* Jasny kolor tekstu */
+}
+
+#startStopButton, #pauseButton {
+    padding: 10px 20px;
+    border: none;
+    margin: 0 5px;
+    background-color: #007bff; /* Niebieski kolor przycisku */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Płynna zmiana koloru */
+}
+
+#startStopButton:hover, #pauseButton:hover {
+    background-color: #0056b3; /* Ciemniejszy niebieski przy najechaniu */
+}
+
+#earning {
+    margin-top: 20px;
+}
